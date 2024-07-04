@@ -59,11 +59,11 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         .btn-primary {
-            background-color: #4ecdc4;
+            background-color: #45b7aa;
             border-color: #4ecdc4;
         }
         .btn-primary:hover {
-            background-color: #45b7aa;
+            background-color: #3d8e84;
             border-color: #45b7aa;
         }
         .btn-outline-primary {
@@ -108,7 +108,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Hayden Kong</a>
+            <a class="navbar-brand" href="/index.html">Hayden Kong</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -219,7 +219,8 @@
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Contact Me</h2>
+            <h2 class="text-center mb-3">Contact Me</h2>
+            <p class="text-secondary text-center mb-4">Got questions about me? Need help with something tech related? Got some feedback? Feel free to contact me and I will respond via email as soon as I can!</p>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <form data-netlify="true" name="HK-Web-Contact-Form">
@@ -235,7 +236,7 @@
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" rows="5" placeholder="Your message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" onclick="alert('Please email contact@pixelverse.tech instead. The contact form is not yet fully working! Sorry!')" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>

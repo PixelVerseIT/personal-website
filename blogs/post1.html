@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post Title</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.heliosps.com/wp-content/uploads/sites/4/2019/01/cropped-favicon-1.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Markdown converter for blog -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <style>
         body {
             background-color: #121212;
@@ -43,7 +56,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Hayden Kong</a>
+            <a class="navbar-brand" href="/index.html">Hayden Kong</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -81,23 +94,44 @@
     <script>
         // Markdown content goes here
         const markdown = `
-# Markdown Content Here
+Welcome to my blog! This is my very first post, and I'm excited to share my journey with you. Whether you're here for coding tips, design projects, or just to see what I'm up to, I hope you find something interesting and useful.
 
-Testing blog post
+## A Little About Me
 
-## Subheading
+I'm a developer with a passion for creating web applications and exploring new technologies. Here are some of the projects I've worked on recently:
 
-- List item 1
-- List item 2
+- **Password Generator**: A simple tool to create strong, random passwords.
+- **SpaceX Rocket Lander Game**: Land a rocket, similar to the SpaceX rocket booster landings, while avoiding obstacles and not running out of fuel!
+- **AI Chatbot**: An AI chatbot powered by the Groq API with chat history managment. Chat with Llama, Mistral and Gemma models.
+- **AI Receipt-to-List Converter**: Converts grocery store receipts into task lists using AI.
+- **Weather App**: Provides real-time weather information using HTML, CSS, and JavaScript powered by the OpenWeatherMap API.
 
-[Link Example](https://example.com)
+## What to Expect
 
-![Image Example](https://via.placeholder.com/300x200)
+In this blog, I'll be sharing:
 
-\`\`\`python
-def example_code():
-    print("Hello, World!")
-\`\`\`
+- **Coding Projects**: guides, tips, and tricks for various coding projects.
+- **Design Tips**: Best practices and insights into web design.
+- **Latest in tech**: Updates on the latest technologies and trends.
+- **Tutorials**: Detailed tutorials on how to build specific projects.
+
+## Current Focus
+
+Right now, I'm working on various projects, some for the Hack Club Arcade!
+
+- **Personal Website**: This! You are currently reading it!
+- **Python Session Manager**: A simple app to manage Hack Club Arcade sessions.
+
+Stay tuned for updates on these projects and more!
+
+## Join the Journey
+
+I encourage you to join me on this journey. Feel free to reach out with any questions, suggestions, or just to say hello. Your feedback is always welcome and appreciated.
+
+Let's make this blog a place where we can learn, grow, and create amazing things together.
+
+Happy coding!
+
         `;
 
         document.addEventListener('DOMContentLoaded', function() {

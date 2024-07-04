@@ -2,11 +2,15 @@
     {
         "title": "Hello World, Blog",
         "date": "2024-07-04",
-        "link": "/blogs/post1.html"
+        "link": "/blogs/post1.html",
+        "description": "This is my first blog post about my journey into blogging.",
+        "tags": ["Introduction", "First blogs", "Hello World"]
     },
     {
-        "title": "Learning Markdown",
+        "title": "What is Markdown",
         "date": "2024-07-05",
-        "link": "/blogs/post2.html"
+        "link": "/blogs/post2.html",
+        "description": "Sharing my experience and tips on learning and using Markdown",
+        "tags": ["Markdown", "Tips"]
     }
 ]

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Hayden Kong</title>
+    <title>Blog Post Title</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <!-- Markdown converter for blog -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <style>
         body {
             background-color: #121212;
@@ -25,15 +28,11 @@
         .navbar {
             background-color: #1e1e1e !important;
         }
-        .blog-list-item {
+        .blog-post {
             background-color: #2d2d2d;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        .blog-list-item:hover {
-            transform: translateY(-5px);
         }
         .blog-title {
             color: #4ecdc4;
@@ -41,22 +40,19 @@
         .blog-date {
             color: #999999;
         }
-        .blog-description {
-        color: #cccccc;
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
         }
-        .blog-tag {
-            display: inline-block;
-            background-color: #4ecdc4;
-            color: #121212;
-            border-radius: 4px;
-            padding: 2px 8px;
-            margin-right: 5px;
-            font-size: 0.8em;
+        .blog-content pre {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -86,43 +82,26 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <h1 class="text-center mb-5 mt-5 pt-5">My Blog</h1>
-        <div id="blog-list"></div>
+    <div class="container mt-5 pt-5 mb-5">
+        <div class="blog-post">
+            <h1 class="blog-title">What is Markdown</h1>
+            <p class="blog-date">04/07/2024</p>
+            <div id="blog-content" class="blog-content"></div>
+        </div>
+        <a href="/blog.html" class="btn btn-primary">Back to Blog List</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-center text-white py-4">
-        <p>&copy; 2024 Hayden Kong. All rights reserved.</p>
-    </footer>
-
-
     <script>
-        async function fetchBlogPosts() {
-            const response = await fetch('/blogs/blogs.json');
-            const blogPosts = await response.json();
-            return blogPosts;
-        }
-        function renderBlogList(blogPosts) {
-            const blogListContainer = document.getElementById('blog-list');
-            blogPosts.forEach(post => {
-                const postElement = document.createElement('div');
-                postElement.className = 'blog-list-item';
-                const tagsHtml = post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join(' ');
-                postElement.innerHTML = `
-                    <h2 class="blog-title"><a href="${post.link}" class="text-decoration-none">${post.title}</a></h2>
-                    <p class="blog-date">${post.date}</p>
-                    <p class="blog-description">${post.description}</p>
-                    <div class="blog-tags">${tagsHtml}</div>
-                `;
-                blogListContainer.appendChild(postElement);
-            });
-        }
-        // Fetch and render blog posts when the page loads
-        window.onload = async () => {
-            const blogPosts = await fetchBlogPosts();
-            renderBlogList(blogPosts);
-        };
+        // Markdown content goes here
+        const markdown = `
+# Coming Soon
+
+        `;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogContent = document.getElementById('blog-content');
+            blogContent.innerHTML = marked.parse(markdown);
+        });
     </script>
 </body>
 </html>
