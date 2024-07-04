@@ -35,26 +35,46 @@
         .search-bar {
             margin-bottom: 2rem;
         }
+        .form-control {
+            background-color: #2d2d2d;
+            border-color: #4ecdc4;
+            color: #ffffff;
+        }
+        .form-control:focus {
+            background-color: #3d3d3d;
+            border-color: #4ecdc4;
+            color: #ffffff;
+            box-shadow: 0 0 0 0.25rem rgba(78, 205, 196, 0.25);
+        }
+        .form-control::placeholder {
+            color: #999999;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Hayden Kong</a>
+            <a class="navbar-brand" href="#home">Hayden Kong</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
+                        <a class="nav-link" href="/index.html#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="projects.html">Projects</a>
+                        <a class="nav-link active" href="/projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
+                        <a class="nav-link" href="https://scrapbook.hackclub.com/HaydenKong">Scrapbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#contact">Contact</a>
                     </li>
                 </ul>
             </div>

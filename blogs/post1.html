@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar {
+            background-color: #1e1e1e !important;
+        }
+        .blog-post {
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .blog-title {
+            color: #4ecdc4;
+        }
+        .blog-date {
+            color: #999999;
+        }
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .blog-content pre {
+            background-color: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Hayden Kong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://scrapbook.hackclub.com/HaydenKong">Scrapbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5 mb-5">
+        <div class="blog-post">
+            <h1 class="blog-title">Hello World, Blog</h1>
+            <p class="blog-date">04/07/2024</p>
+            <div id="blog-content" class="blog-content"></div>
+        </div>
+        <a href="/blog.html" class="btn btn-primary">Back to Blog List</a>
+    </div>
+
+    <script>
+        // Markdown content goes here
+        const markdown = `
+# Markdown Content Here
+
+Testing blog post
+
+## Subheading
+
+- List item 1
+- List item 2
+
+[Link Example](https://example.com)
+
+![Image Example](https://via.placeholder.com/300x200)
+
+\`\`\`python
+def example_code():
+    print("Hello, World!")
+\`\`\`
+        `;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogContent = document.getElementById('blog-content');
+            blogContent.innerHTML = marked.parse(markdown);
+        });
+    </script>
+</body>
+</html>

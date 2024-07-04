@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Hello World, Blog",
+        "date": "2024-07-04",
+        "link": "/blogs/post1.html"
+    },
+    {
+        "title": "Learning Markdown",
+        "date": "2024-07-05",
+        "link": "/blogs/post2.html"
+    }
+]

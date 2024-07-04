@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar {
+            background-color: #1e1e1e !important;
+        }
+        .blog-list-item {
+            background-color: #2d2d2d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .blog-list-item:hover {
+            transform: translateY(-5px);
+        }
+        .blog-title {
+            color: #4ecdc4;
+        }
+        .blog-date {
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Hayden Kong</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://scrapbook.hackclub.com/HaydenKong">Scrapbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5 mt-5 pt-5">My Blog</h1>
+        <div id="blog-list"></div>
+    </div>
+
+    <script>
+        async function fetchBlogPosts() {
+            const response = await fetch('/blogs/blogs.json');
+            const blogPosts = await response.json();
+            return blogPosts;
+        }
+
+        function renderBlogList(blogPosts) {
+            const blogListContainer = document.getElementById('blog-list');
+            blogPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-list-item';
+                postElement.innerHTML = `
+                    <h2 class="blog-title"><a href="${post.link}" class="text-decoration-none">${post.title}</a></h2>
+                    <p class="blog-date">${post.date}</p>
+                `;
+                blogListContainer.appendChild(postElement);
+            });
+        }
+
+        // Fetch and render blog posts when the page loads
+        window.onload = async () => {
+            const blogPosts = await fetchBlogPosts();
+            renderBlogList(blogPosts);
+        };
+    </script>
+</body>
+</html>

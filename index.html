@@ -86,6 +86,22 @@
             color: #ffffff;
             border: 1px solid #4ecdc4;
         }
+
+        /* Dark mode form styles */
+        .form-control {
+            background-color: #2d2d2d;
+            border-color: #4ecdc4;
+            color: #ffffff;
+        }
+        .form-control:focus {
+            background-color: #3d3d3d;
+            border-color: #4ecdc4;
+            color: #ffffff;
+            box-shadow: 0 0 0 0.25rem rgba(78, 205, 196, 0.25);
+        }
+        .form-control::placeholder {
+            color: #999999;
+        }
     </style>
 </head>
 <body>
@@ -99,13 +115,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
+                        <a class="nav-link" href="/index.html#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link" href="/projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
+                        <a class="nav-link" href="https://scrapbook.hackclub.com/HaydenKong">Scrapbook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -203,15 +225,15 @@
                     <form data-netlify="true" name="HK-Web-Contact-Form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control input" id="name" required>
+                            <input type="text" class="form-control" id="name" placeholder="Your name" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control input" id="email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Your email" required>
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message input" rows="5" required></textarea>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
